@@ -1,0 +1,404 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ImageLabel = Instance.new("ImageLabel")
+local Gm = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local S = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Jp = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local NF = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local SI = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Pi = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local Lby = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local TP = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local TpBox = Instance.new("TextBox")
+local UICorner_10 = Instance.new("UICorner")
+local SpeedBox = Instance.new("TextBox")
+local UICorner_11 = Instance.new("UICorner")
+local JumpBox = Instance.new("TextBox")
+local UICorner_12 = Instance.new("UICorner")
+local UICorner_13 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+Frame.Position = UDim2.new(0.673957288, 0, 0.425766885, 0)
+Frame.Size = UDim2.new(0.2, 0, 0.28, 0)
+local UserInputService = game:GetService("UserInputService")
+
+local gui = Frame
+
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function update(input)
+	local delta = input.Position - dragStart
+	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if input == dragInput and dragging then
+		update(input)
+	end
+end)
+
+Frame_2.Parent = Frame
+Frame_2.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
+Frame_2.Position = UDim2.new(0.0186503883, 0, 0.15323624, 0)
+Frame_2.Size = UDim2.new(0.961003721, 0, 0.809954047, 0)
+
+UICorner.Parent = Frame_2
+
+ImageLabel.Parent = Frame_2
+ImageLabel.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(-0.000192969281, 0, 0, 0)
+ImageLabel.Size = UDim2.new(1, 0, 0.999237895, 0)
+ImageLabel.Image = "rbxassetid://2151782136"
+ImageLabel.ImageTransparency = 0.760
+ImageLabel.ScaleType = Enum.ScaleType.Tile
+ImageLabel.TileSize = UDim2.new(0, 30, 0, 50)
+
+Gm.Name = "Gm"
+Gm.Parent = Frame_2
+Gm.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Gm.BackgroundTransparency = 0.450
+Gm.Position = UDim2.new(0.0229357779, 0, 0.0445478223, 0)
+Gm.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Gm.Font = Enum.Font.SourceSans
+Gm.Text = "God Mode"
+Gm.TextColor3 = Color3.fromRGB(255, 255, 255)
+Gm.TextScaled = true
+Gm.TextSize = 14.000
+Gm.TextWrapped = true
+
+UICorner_2.Parent = Gm
+
+S.Name = "S"
+S.Parent = Frame_2
+S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+S.BackgroundTransparency = 0.450
+S.Position = UDim2.new(0.0229357779, 0, 0.240172088, 0)
+S.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+S.Font = Enum.Font.SourceSans
+S.Text = "Speed"
+S.TextColor3 = Color3.fromRGB(255, 255, 255)
+S.TextScaled = true
+S.TextSize = 14.000
+S.TextWrapped = true
+
+UICorner_3.Parent = S
+
+Jp.Name = "Jp"
+Jp.Parent = Frame_2
+Jp.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Jp.BackgroundTransparency = 0.450
+Jp.Position = UDim2.new(0.0229357779, 0, 0.443819284, 0)
+Jp.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Jp.Font = Enum.Font.SourceSans
+Jp.Text = "JumpPower"
+Jp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Jp.TextScaled = true
+Jp.TextSize = 14.000
+Jp.TextWrapped = true
+
+UICorner_4.Parent = Jp
+
+NF.Name = "NF"
+NF.Parent = Frame_2
+NF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+NF.BackgroundTransparency = 0.450
+NF.Position = UDim2.new(0.0229357779, 0, 0.641102493, 0)
+NF.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+NF.Font = Enum.Font.SourceSans
+NF.Text = "No Time Freeze"
+NF.TextColor3 = Color3.fromRGB(255, 255, 255)
+NF.TextScaled = true
+NF.TextSize = 14.000
+NF.TextWrapped = true
+
+UICorner_5.Parent = NF
+
+SI.Name = "SI"
+SI.Parent = Frame_2
+SI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SI.BackgroundTransparency = 0.450
+SI.Position = UDim2.new(0.658080399, 0, 0.0460708737, 0)
+SI.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+SI.Font = Enum.Font.SourceSans
+SI.Text = "Tp To Starter Island"
+SI.TextColor3 = Color3.fromRGB(255, 255, 255)
+SI.TextScaled = true
+SI.TextSize = 14.000
+SI.TextWrapped = true
+
+UICorner_6.Parent = SI
+
+Pi.Name = "Pi"
+Pi.Parent = Frame_2
+Pi.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Pi.BackgroundTransparency = 0.450
+Pi.Position = UDim2.new(0.658080399, 0, 0.240172103, 0)
+Pi.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Pi.Font = Enum.Font.SourceSans
+Pi.Text = "Tp To Pro Island"
+Pi.TextColor3 = Color3.fromRGB(255, 255, 255)
+Pi.TextScaled = true
+Pi.TextSize = 14.000
+Pi.TextWrapped = true
+
+UICorner_7.Parent = Pi
+
+Lby.Name = "Lby"
+Lby.Parent = Frame_2
+Lby.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Lby.BackgroundTransparency = 0.450
+Lby.Position = UDim2.new(0.658080399, 0, 0.44063729, 0)
+Lby.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Lby.Font = Enum.Font.SourceSans
+Lby.Text = "Tp To Lobby"
+Lby.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lby.TextScaled = true
+Lby.TextSize = 14.000
+Lby.TextWrapped = true
+
+UICorner_8.Parent = Lby
+
+TP.Name = "TP"
+TP.Parent = Frame_2
+TP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TP.BackgroundTransparency = 0.450
+TP.Position = UDim2.new(0.656316102, 0, 0.797019899, 0)
+TP.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+TP.Font = Enum.Font.SourceSans
+TP.Text = "Tp to player"
+TP.TextColor3 = Color3.fromRGB(255, 255, 255)
+TP.TextScaled = true
+TP.TextSize = 14.000
+TP.TextWrapped = true
+
+UICorner_9.Parent = TP
+
+TpBox.Name = "TpBox"
+TpBox.Parent = Frame_2
+TpBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TpBox.BackgroundTransparency = 0.500
+TpBox.Position = UDim2.new(0.656636178, 0, 0.64107877, 0)
+TpBox.Size = UDim2.new(0.314999998, 0, 0.156000003, 0)
+TpBox.Font = Enum.Font.PermanentMarker
+TpBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+TpBox.PlaceholderText = "PlayerName"
+TpBox.Text = ""
+TpBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TpBox.TextScaled = true
+TpBox.TextSize = 14.000
+TpBox.TextWrapped = true
+
+UICorner_10.Parent = TpBox
+
+SpeedBox.Name = "SpeedBox"
+SpeedBox.Parent = Frame_2
+SpeedBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedBox.BackgroundTransparency = 0.500
+SpeedBox.Position = UDim2.new(0.340828121, 0, 0.236966386, 0)
+SpeedBox.Size = UDim2.new(0.110342264, 0, 0.156000003, 0)
+SpeedBox.Font = Enum.Font.PermanentMarker
+SpeedBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+SpeedBox.PlaceholderText = "Amount"
+SpeedBox.Text = ""
+SpeedBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedBox.TextScaled = true
+SpeedBox.TextSize = 14.000
+SpeedBox.TextWrapped = true
+
+UICorner_11.Parent = SpeedBox
+
+JumpBox.Name = "JumpBox"
+JumpBox.Parent = Frame_2
+JumpBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JumpBox.BackgroundTransparency = 0.500
+JumpBox.Position = UDim2.new(0.340828121, 0, 0.443795562, 0)
+JumpBox.Size = UDim2.new(0.110342264, 0, 0.156000003, 0)
+JumpBox.Font = Enum.Font.PermanentMarker
+JumpBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+JumpBox.PlaceholderText = "Amount"
+JumpBox.Text = ""
+JumpBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+JumpBox.TextScaled = true
+JumpBox.TextSize = 14.000
+JumpBox.TextWrapped = true
+
+UICorner_12.Parent = JumpBox
+
+UICorner_13.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.356052876, 0, 0, 0)
+TextLabel.Size = UDim2.new(0.284503728, 0, 0.15323621, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Slap GUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.744320035, 0, 0.0774748847, 0)
+TextLabel_2.Size = UDim2.new(0.255680382, 0, 0.0757613406, 0)
+TextLabel_2.Font = Enum.Font.PermanentMarker
+TextLabel_2.Text = "By Mr.Exploit"
+TextLabel_2.TextColor3 = Color3.fromRGB(77, 77, 77)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+local tfon = true
+
+Gm.MouseButton1Click:Connect(function()
+	if game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled") then
+		if game.Players.LocalPlayer.Character:FindFirstChild("isInArena").Value == true then
+			game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled"):Destroy()
+			game.Players.LocalPlayer.Character:FindFirstChild("isInArena"):Destroy()
+			game.Players.LocalPlayer.Character:FindFirstChild("TSVulnerability"):Destroy()
+			game.Players.LocalPlayer.Character:FindFirstChild("IsInDefaultArena"):Destroy()
+		else
+			local StarterGui = game.StarterGui
+			local sound = Instance.new("Sound",workspace)
+			sound.SoundId = "rbxassetid://225320558"
+			sound.PlayOnRemove = true
+			sound:Destroy()
+			StarterGui:SetCore("SendNotification", {
+				Title = "Warning";
+				Text = "You Have to enter an island to god mode"
+			})
+		end
+	end
+end)
+
+S.MouseButton1Click:Connect(function()
+	if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil then
+		game.Players.LocalPlayer.Character.Humanoid.Name="_ _ _"
+		game.Players.LocalPlayer.Character["_ _ _"].WalkSpeed = tonumber(SpeedBox.Text)
+	elseif game.Players.LocalPlayer.Character:FindFirstChild("_ _ _") ~= nil then
+		game.Players.LocalPlayer.Character:FindFirstChild("_ _ _").WalkSpeed = tonumber(SpeedBox.Text)
+	end
+end)
+
+Jp.MouseButton1Click:Connect(function()
+	if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") ~= nil then
+		game.Players.LocalPlayer.Character.Humanoid.Name="_ _ _"
+		game.Players.LocalPlayer.Character["_ _ _"].JumpPower = tonumber(JumpBox.Text)
+	elseif game.Players.LocalPlayer.Character:FindFirstChild("_ _ _") ~= nil then
+		game.Players.LocalPlayer.Character["_ _ _"].JumpPower = tonumber(JumpBox.Text)
+	end
+end)
+
+NF.MouseButton1Click:Connect(function()
+	if tfon then
+		tfon = false
+		NF.Text = "TimeFreeze Off"
+	else
+		tfon = true
+		NF.Text = "TimeFreeze On"
+	end
+end)
+
+SI.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(122.187042, 359.984283, -0.974518955, -0.0461894758, -2.20339125e-09, -0.998932719, -1.18904417e-07, 1, 3.29225514e-09, 0.998932719, 1.18929577e-07, -0.0461894758))
+end)
+
+Pi.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(53.2623177, -5.17293787, -6.4983449, 0.988194346, -4.27591935e-08, -0.153205544, 3.84768093e-08, 1, -3.09168371e-08, 0.153205544, 2.4656984e-08, 0.988194346))
+end)
+
+Lby.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(-353.03006, 326.234283, -1.99629986, 0.293333888, 2.33903688e-08, 0.956010044, 5.62207632e-08, 1, -4.17169481e-08, -0.956010044, 6.5984608e-08, 0.293333888))
+end)
+
+TP.MouseButton1Click:Connect(function()
+	local name = TpBox.Text
+	local plr = game.Players:FindFirstChild(name)
+	
+	if plr~=nil then
+		game.Players.LocalPlayer.Character:MoveTo(plr.Character.PrimaryPart.Position)
+	else
+		local StarterGui = game.StarterGui
+		local sound = Instance.new("Sound",workspace)
+		sound.SoundId = "rbxassetid://225320558"
+		sound.PlayOnRemove = true
+		sound:Destroy()
+		StarterGui:SetCore("SendNotification", {
+			Title = "Warning";
+			Text = "Invalid Player"
+		})
+	end
+end)
+
+TpBox.FocusLost:Connect(function()
+	local plr = "Nil"
+	local name = TpBox.Text
+	for i,v in pairs(game.Players:GetPlayers()) do  -- iterating though players
+		if v.Name:lower():sub(1,#name) == name:lower() then	-- checking to see if player name matches the provided string
+			plr = v
+		end
+	end
+	TpBox.Text = tostring(plr.Name)
+end)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+	char.Changed:Connect(function()
+		if tfon == true then
+			print("TF off")
+		else
+			for i,v in pairs(char:GetChildren()) do
+				if v.ClassName == "Part" then
+					v.Anchored = false
+				end
+			end
+		end
+	end)
+end)
