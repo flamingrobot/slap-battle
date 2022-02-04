@@ -30,7 +30,17 @@ local SpeedBox = Instance.new("TextBox")
 local UICorner_11 = Instance.new("UICorner")
 local JumpBox = Instance.new("TextBox")
 local UICorner_12 = Instance.new("UICorner")
+local Arua = Instance.new("TextButton")
 local UICorner_13 = Instance.new("UICorner")
+local Grav = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local GravBox = Instance.new("TextBox")
+local UICorner_15 = Instance.new("UICorner")
+local FRST = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local Del = Instance.new("TextButton")
+local UICorner_17 = Instance.new("UICorner")
+local UICorner_18 = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
 
@@ -41,8 +51,9 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-Frame.Position = UDim2.new(0.673957288, 0, 0.425766885, 0)
-Frame.Size = UDim2.new(0.2, 0, 0.28, 0)
+Frame.Position = UDim2.new(0.702245116, 0, 0.484662563, 0)
+Frame.Size = UDim2.new(0.287841201, 0, 0.399018377, 0)
+
 local UserInputService = game:GetService("UserInputService")
 
 local gui = Frame
@@ -83,6 +94,7 @@ UserInputService.InputChanged:Connect(function(input)
 	end
 end)
 
+
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(62, 62, 62)
 Frame_2.Position = UDim2.new(0.0186503883, 0, 0.15323624, 0)
@@ -119,7 +131,7 @@ S.Name = "S"
 S.Parent = Frame_2
 S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 S.BackgroundTransparency = 0.450
-S.Position = UDim2.new(0.0229357779, 0, 0.240172088, 0)
+S.Position = UDim2.new(0.0229357779, 0, 0.23637554, 0)
 S.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
 S.Font = Enum.Font.SourceSans
 S.Text = "Speed"
@@ -134,7 +146,7 @@ Jp.Name = "Jp"
 Jp.Parent = Frame_2
 Jp.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Jp.BackgroundTransparency = 0.450
-Jp.Position = UDim2.new(0.0229357779, 0, 0.443819284, 0)
+Jp.Position = UDim2.new(0.0229357779, 0, 0.421039999, 0)
 Jp.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
 Jp.Font = Enum.Font.SourceSans
 Jp.Text = "JumpPower"
@@ -149,7 +161,7 @@ NF.Name = "NF"
 NF.Parent = Frame_2
 NF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 NF.BackgroundTransparency = 0.450
-NF.Position = UDim2.new(0.0229357779, 0, 0.641102493, 0)
+NF.Position = UDim2.new(0.659841776, 0, 0.682864547, 0)
 NF.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
 NF.Font = Enum.Font.SourceSans
 NF.Text = "No Time Freeze"
@@ -164,8 +176,8 @@ SI.Name = "SI"
 SI.Parent = Frame_2
 SI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 SI.BackgroundTransparency = 0.450
-SI.Position = UDim2.new(0.658080399, 0, 0.0460708737, 0)
-SI.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+SI.Position = UDim2.new(0.767520547, 0, 0.0422742702, 0)
+SI.Size = UDim2.new(0.09636309, 0, 0.15422979, 0)
 SI.Font = Enum.Font.SourceSans
 SI.Text = "Tp To Starter Island"
 SI.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -179,8 +191,8 @@ Pi.Name = "Pi"
 Pi.Parent = Frame_2
 Pi.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Pi.BackgroundTransparency = 0.450
-Pi.Position = UDim2.new(0.658080399, 0, 0.240172103, 0)
-Pi.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Pi.Position = UDim2.new(0.876960754, 0, 0.042751506, 0)
+Pi.Size = UDim2.new(0.0960000008, 0, 0.153999999, 0)
 Pi.Font = Enum.Font.SourceSans
 Pi.Text = "Tp To Pro Island"
 Pi.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -194,8 +206,8 @@ Lby.Name = "Lby"
 Lby.Parent = Frame_2
 Lby.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Lby.BackgroundTransparency = 0.450
-Lby.Position = UDim2.new(0.658080399, 0, 0.44063729, 0)
-Lby.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Lby.Position = UDim2.new(0.659874499, 0, 0.045795992, 0)
+Lby.Size = UDim2.new(0.0960000008, 0, 0.153999999, 0)
 Lby.Font = Enum.Font.SourceSans
 Lby.Text = "Tp To Lobby"
 Lby.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -209,8 +221,8 @@ TP.Name = "TP"
 TP.Parent = Frame_2
 TP.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TP.BackgroundTransparency = 0.450
-TP.Position = UDim2.new(0.656316102, 0, 0.797019899, 0)
-TP.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+TP.Position = UDim2.new(0.658110142, 0, 0.316768289, 0)
+TP.Size = UDim2.new(0.315243274, 0, 0.0779116526, 0)
 TP.Font = Enum.Font.SourceSans
 TP.Text = "Tp to player"
 TP.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -224,8 +236,8 @@ TpBox.Name = "TpBox"
 TpBox.Parent = Frame_2
 TpBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TpBox.BackgroundTransparency = 0.500
-TpBox.Position = UDim2.new(0.656636178, 0, 0.64107877, 0)
-TpBox.Size = UDim2.new(0.314999998, 0, 0.156000003, 0)
+TpBox.Position = UDim2.new(0.658430338, 0, 0.238762438, 0)
+TpBox.Size = UDim2.new(0.314999998, 0, 0.0780353174, 0)
 TpBox.Font = Enum.Font.PermanentMarker
 TpBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
 TpBox.PlaceholderText = "PlayerName"
@@ -241,7 +253,7 @@ SpeedBox.Name = "SpeedBox"
 SpeedBox.Parent = Frame_2
 SpeedBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SpeedBox.BackgroundTransparency = 0.500
-SpeedBox.Position = UDim2.new(0.340828121, 0, 0.236966386, 0)
+SpeedBox.Position = UDim2.new(0.340828121, 0, 0.233169839, 0)
 SpeedBox.Size = UDim2.new(0.110342264, 0, 0.156000003, 0)
 SpeedBox.Font = Enum.Font.PermanentMarker
 SpeedBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
@@ -258,7 +270,7 @@ JumpBox.Name = "JumpBox"
 JumpBox.Parent = Frame_2
 JumpBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 JumpBox.BackgroundTransparency = 0.500
-JumpBox.Position = UDim2.new(0.340828121, 0, 0.443795562, 0)
+JumpBox.Position = UDim2.new(0.340828121, 0, 0.421016276, 0)
 JumpBox.Size = UDim2.new(0.110342264, 0, 0.156000003, 0)
 JumpBox.Font = Enum.Font.PermanentMarker
 JumpBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
@@ -271,7 +283,84 @@ JumpBox.TextWrapped = true
 
 UICorner_12.Parent = JumpBox
 
-UICorner_13.Parent = Frame
+Arua.Name = "Arua"
+Arua.Parent = Frame_2
+Arua.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Arua.BackgroundTransparency = 0.450
+Arua.Position = UDim2.new(0.658080399, 0, 0.445185691, 0)
+Arua.Size = UDim2.new(0.313086331, 0, 0.153999999, 0)
+Arua.Font = Enum.Font.SourceSans
+Arua.Text = "Big auto kill box IDK"
+Arua.TextColor3 = Color3.fromRGB(255, 255, 255)
+Arua.TextScaled = true
+Arua.TextSize = 14.000
+Arua.TextWrapped = true
+
+UICorner_13.Parent = Arua
+
+Grav.Name = "Grav"
+Grav.Parent = Frame_2
+Grav.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Grav.BackgroundTransparency = 0.450
+Grav.Position = UDim2.new(0.0229357779, 0, 0.59568131, 0)
+Grav.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+Grav.Font = Enum.Font.SourceSans
+Grav.Text = "Gravity"
+Grav.TextColor3 = Color3.fromRGB(255, 255, 255)
+Grav.TextScaled = true
+Grav.TextSize = 14.000
+Grav.TextWrapped = true
+
+UICorner_14.Parent = Grav
+
+GravBox.Name = "GravBox"
+GravBox.Parent = Frame_2
+GravBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravBox.BackgroundTransparency = 0.500
+GravBox.Position = UDim2.new(0.340828121, 0, 0.595657587, 0)
+GravBox.Size = UDim2.new(0.110342264, 0, 0.156000003, 0)
+GravBox.Font = Enum.Font.PermanentMarker
+GravBox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+GravBox.PlaceholderText = "Amount"
+GravBox.Text = ""
+GravBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravBox.TextScaled = true
+GravBox.TextSize = 14.000
+GravBox.TextWrapped = true
+
+UICorner_15.Parent = GravBox
+
+FRST.Name = "FRST"
+FRST.Parent = Frame_2
+FRST.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FRST.BackgroundTransparency = 0.450
+FRST.Position = UDim2.new(0.0247298796, 0, 0.793101907, 0)
+FRST.Size = UDim2.new(0.315243274, 0, 0.155752793, 0)
+FRST.Font = Enum.Font.SourceSans
+FRST.Text = "Force Reset"
+FRST.TextColor3 = Color3.fromRGB(255, 255, 255)
+FRST.TextScaled = true
+FRST.TextSize = 14.000
+FRST.TextWrapped = true
+
+UICorner_16.Parent = FRST
+
+Del.Name = "Del"
+Del.Parent = Frame_2
+Del.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Del.BackgroundTransparency = 0.450
+Del.Position = UDim2.new(-0.000387641514, 0, -0.189191297, 0)
+Del.Size = UDim2.new(0.17530334, 0, 0.188908532, 0)
+Del.Font = Enum.Font.SourceSans
+Del.Text = "Delete Gui"
+Del.TextColor3 = Color3.fromRGB(255, 0, 0)
+Del.TextScaled = true
+Del.TextSize = 14.000
+Del.TextWrapped = true
+
+UICorner_17.Parent = Del
+
+UICorner_18.Parent = Frame
 
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -296,7 +385,13 @@ TextLabel_2.TextColor3 = Color3.fromRGB(77, 77, 77)
 TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
 TextLabel_2.TextWrapped = true
+
+
 local tfon = true
+
+Del.MouseButton1Click:Connect(function()
+	ScreenGui:Destroy()
+end)
 
 Gm.MouseButton1Click:Connect(function()
 	if game.Players.LocalPlayer.Character:FindFirstChild("Ragdolled") then
@@ -336,6 +431,139 @@ Jp.MouseButton1Click:Connect(function()
 		game.Players.LocalPlayer.Character["_ _ _"].JumpPower = tonumber(JumpBox.Text)
 	end
 end)
+Grav.MouseButton1Click:Connect(function()
+	game.Workspace.Gravity = GravBox.Text
+end)
+
+FRST.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace").DEATHBARRIER.Position)
+end)
+
+local onru = false
+Arua.MouseButton1Click:Connect(function()
+	if onru == false then
+		onru = true
+		Arua.Text = "Kill Aura On"
+		local scr = game.Players.LocalPlayer.Character:GetChildren()
+		for i,v in pairs(scr) do
+			if v.ClassName == "LocalScript" then
+				if v.Name ~= "Animate" then
+					v:Destroy()
+				end
+			end
+		end
+
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") ~= nil then
+
+
+
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove.Size = Vector3.new(30,30,30)
+
+
+
+			local pt = Instance.new("Part")
+			pt.Anchored = true
+			pt.Parent = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+			pt.Size = Vector3.new(30,30,30)
+			pt.CFrame = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove.CFrame
+			local wd = Instance.new("WeldConstraint",pt)
+			wd.Part0 = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove
+			wd.Part1 = pt
+			pt.CanCollide = false
+			pt.Transparency = .6
+			pt.Material = "Neon"
+			pt.Anchored = false
+			pt.CastShadow = false
+			pt.Massless = true
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove.Massless = true
+			local cool=false
+			pt.Touched:Connect(function(hit)
+				if hit.Parent:FindFirstChild("Humanoid") ~= nil and hit.Parent ~= game.Players.LocalPlayer.Character then
+				    if hit.Parent:FindFirstChild("Reverse") == nil then
+				        	if cool == false then
+						cool = true
+						game.ReplicatedStorage.b:FireServer(hit)
+						cool = false
+					end
+				    end
+				end
+			end)
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Died:Connect(function()
+				onru = false
+			end)
+
+		end
+	else
+		local StarterGui = game.StarterGui
+		local sound = Instance.new("Sound",workspace)
+		sound.SoundId = "rbxassetid://225320558"
+		sound.PlayOnRemove = true
+		sound:Destroy()
+		StarterGui:SetCore("SendNotification", {
+			Title = "Warning";
+			Text = "Aura is on already. Right Click To Force."
+		})
+		Arua.Text = "Kill Aura On"
+		local scr = game.Players.LocalPlayer.Character:GetChildren()
+		for i,v in pairs(scr) do
+			if v.ClassName == "LocalScript" then
+				if v.Name ~= "Animate" then
+					v:Destroy()
+				end
+			end
+		end
+
+		if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") ~= nil then
+
+
+
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove.Size = Vector3.new(30,30,30)
+
+
+
+			local pt = Instance.new("Part")
+			pt.Anchored = true
+			pt.Parent = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+			pt.Size = Vector3.new(30,30,30)
+			pt.CFrame = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove.CFrame
+			local wd = Instance.new("WeldConstraint",pt)
+			wd.Part0 = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove
+			wd.Part1 = pt
+			pt.CanCollide = false
+			pt.Transparency = .6
+			pt.Material = "Neon"
+			pt.Anchored = false
+			pt.CastShadow = false
+			pt.Massless = true
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Glove.Massless = true
+			local cool=false
+			pt.Touched:Connect(function(hit)
+				if hit.Parent:FindFirstChild("Humanoid") ~= nil and hit.Parent ~= game.Players.LocalPlayer.Character then
+					if cool == false then
+						cool = true
+						game.ReplicatedStorage.b:FireServer(hit)
+						cool = false
+					end
+				end
+			end)
+			game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Died:Connect(function()
+				onru = false
+			end)
+		end
+	end
+end)
+
+Arua.MouseButton2Click:Connect(function()
+	local StarterGui = game.StarterGui
+	local sound = Instance.new("Sound",workspace)
+	sound.SoundId = "rbxassetid://225320558"
+	sound.PlayOnRemove = true
+	sound:Destroy()
+	StarterGui:SetCore("SendNotification", {
+		Title = "Warning";
+		Text = "Aura Forced. Things may break."
+	})
+end)
 
 NF.MouseButton1Click:Connect(function()
 	if tfon then
@@ -362,7 +590,7 @@ end)
 TP.MouseButton1Click:Connect(function()
 	local name = TpBox.Text
 	local plr = game.Players:FindFirstChild(name)
-	
+
 	if plr~=nil then
 		game.Players.LocalPlayer.Character:MoveTo(plr.Character.PrimaryPart.Position)
 	else
